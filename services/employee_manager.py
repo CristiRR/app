@@ -81,7 +81,7 @@ class EmployeeManager:
                 self._print_employees_by_role("freelancer")
             elif sub_choice == "5":
                 for emp in self.employees:
-                    print(f"{emp.name} ({emp.role})- {emp.vacation_days} vacation days") #vacation_days is not always present  - {emp.vacation_days} vacation days
+                    print(f"{emp.name} ({emp.role})") #vacation_days is not always present  - {emp.vacation_days} vacation days
             elif sub_choice == "0":
                 break
             else:
@@ -91,7 +91,7 @@ class EmployeeManager:
     def _print_employees_by_role(self, role):
         for emp in self.employees:
             if emp.role == role:
-                print(f"{emp.name} ({emp.role}) - {emp.vacation_days} días de vacaciones") #- {emp.vacation_days} días de vacaciones
+                print(f"{emp.name} ({emp.role}) ") #- {emp.vacation_days} días de vacaciones
 
     def request_vacation(self):
         self.clear_screen()
@@ -103,7 +103,7 @@ class EmployeeManager:
             return
 
         for idx, emp in enumerate(valid_employees):
-            print(f"{idx}. {emp.name} ({emp.role}) -  {emp.vacation_days} días de vacaciones") #Bug 
+            print(f"{idx}. {emp.name} ({emp.role}) ") #Bug 
 
         try:
             idx = int(input("Seleccione el índice del empleado: "))
