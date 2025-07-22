@@ -3,10 +3,10 @@ from typing import List
 from datetime import datetime
 
 class Employee(ABC):
-    def __init__(self, name, role, vacation_policy, payment_policy):
+    def __init__(self, name, role, vacation_policy, payment_policy): 
         self.name = name
         self.role = role
-        self.vacation_days = 10   #Default REPARA ESTO CHICA XQ NO APLICA A ESTO -----------------------------------
+       # self.vacation_days = 10   #Default REPARA ESTO CHICA XQ NO APLICA A ESTO -----------------------------------
         self.vacation_policy = vacation_policy
         self.payment_policy = payment_policy
         self.transactions: List[dict] = []
