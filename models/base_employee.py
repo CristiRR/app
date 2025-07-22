@@ -17,8 +17,7 @@ class Employee(ABC):
     def calculate_payment(self):
         return self.payment_policy.calculate_payment(self)
 
-    #@abstractmethod
-    #def accept(self, visitor): pass # VERIFICAR QUE SEA NECESARIO O NO LA IMPLEMENTACION DEL VISITOR
+    
 
     def log_transaction(self, type_op, amount, description):
         self.transactions.append({

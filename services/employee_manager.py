@@ -91,7 +91,7 @@ class EmployeeManager:
     def _print_employees_by_role(self, role):
         for emp in self.employees:
             if emp.role == role:
-                print(f"{emp.name} ({emp.role}) ") #- {emp.vacation_days} días de vacaciones
+                print(f"{emp.name} ({emp.role}) ") #Check this- {emp.vacation_days} días de vacaciones
 
     def request_vacation(self):
         self.clear_screen()
@@ -103,7 +103,7 @@ class EmployeeManager:
             return
 
         for idx, emp in enumerate(valid_employees):
-            print(f"{idx}. {emp.name} ({emp.role}) ") #Bug 
+            print(f"{idx}. {emp.name} ({emp.role}) ") #CHECK THIS 
 
         try:
             idx = int(input("Seleccione el índice del empleado: "))
