@@ -13,7 +13,7 @@ class EmployeeFactory:
     def __init__(self, policies):
         self.policies = policies
 
-    def create_employee(self, name, role, emp_type):
+    def create_employee(self, name, role, emp_type, tipo_pago=None):
         if emp_type == "salaried":
             salary = float(input("Salario mensual: "))
             vac_policy = self._get_vacation_policy(role)
@@ -36,7 +36,6 @@ class EmployeeFactory:
             return Freelancer(name, projects, DefaultVacationPolicy(), self.policies["freelancer"])
 
         elif emp_type == "intern":
-            tipo_pago = input("Tipo de pago para el intern (salaried/hourly): ").lower()
             if tipo_pago == "salaried":
                 salary = float(input("Salario mensual del intern: "))
                 return Intern(name, InternVacationPolicy(), self.policies["intern"], salary=salary)

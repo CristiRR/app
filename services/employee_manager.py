@@ -45,17 +45,18 @@ class EmployeeManager:
         name = input("Nombre del empleado: ")
         role = input("Rol (intern, manager, vice_president, freelancer): ").lower()
 
+        tipo_pago = None
         if role == "freelancer":
             emp_type = "freelancer"
+        elif role == "intern":
+            emp_type = "intern"
+            tipo_pago = input("Tipo de pago para el intern (salaried/hourly): ").lower()
         else:
             emp_type = input("Tipo de pago para el empleado (salaried/hourly): ").lower()
 
         try:
-            # Para interns, siempre usa la política de intern, sin importar el tipo de pago
-            if role == "intern":
-                employee = self.factory.create_employee(name, role, "intern")
-            else:
-                employee = self.factory.create_employee(name, role, emp_type)
+            # Siempre pasa tipo_pago, aunque sea None para la mayoría
+            employee = self.factory.create_employee(name, role, emp_type, tipo_pago=tipo_pago)
             self.employees.append(employee)
             print("Empleado creado exitosamente.")
         except Exception as e:
