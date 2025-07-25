@@ -7,6 +7,7 @@ from policies.vacation.vp_vacation import VPVacationPolicy
 from policies.vacation.intern_vacation import InternVacationPolicy
 from policies.vacation.freelancer_vacation import FreelancerVacationPolicy
 from policies.vacation.default_vacation import DefaultVacationPolicy
+from policies.payment.intern_payment import InternPaymentPolicy
 
 class EmployeeFactory:
     def __init__(self, policies):
@@ -35,7 +36,16 @@ class EmployeeFactory:
             return Freelancer(name, projects, DefaultVacationPolicy(), self.policies["freelancer"])
 
         elif emp_type == "intern":
-            return Intern(name, InternVacationPolicy(), self.policies["intern"])
+            tipo_pago = input("Tipo de pago para el intern (salaried/hourly): ").lower()
+            if tipo_pago == "salaried":
+                salary = float(input("Salario mensual del intern: "))
+                return Intern(name, InternVacationPolicy(), self.policies["intern"], salary=salary)
+            elif tipo_pago == "hourly":
+                rate = float(input("Tarifa por hora del intern: "))
+                hours = int(input("Horas trabajadas por el intern: "))
+                return Intern(name, InternVacationPolicy(), self.policies["intern"], rate=rate, hours=hours)
+            else:
+                raise ValueError("Tipo de pago para intern no válido.")
 
         else:
             raise ValueError("Tipo de empleado no válido.")
