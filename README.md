@@ -1,5 +1,5 @@
 #### 🪄Este proyecto es un sistema de gestión de empleados.
-##Uso
+## Uso
 ## Instrucciones de Uso
 
 ### **1. Ejecutar la aplicación**
@@ -95,7 +95,7 @@ Al iniciar, verás el siguiente menú:
 
 ---
 
-##Utiliza varios patrones para lograr flexibilidad, escalabilidad y fácil mantenimiento.  
+## Utiliza varios patrones para lograr flexibilidad, escalabilidad y fácil mantenimiento.  
 A continuación se explican los principales patrones aplicados:
 
 1. **Strategy** 🌟
