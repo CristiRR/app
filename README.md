@@ -36,8 +36,7 @@ Al iniciar, verás el siguiente menú:
   - `vice_president`
   - `freelancer`
 - Según el rol:
-  - **Freelancer:** Se te pedirá información de proyectos.
-  - **Intern:** Se te pedirá el tipo de pago (`salaried` o `hourly`), y luego el salario mensual o tarifa y horas.
+  - **Freelancer:** Se te pedirá información de proyectos (nombre y pago).
   - **Otros roles:** Se te pedirá el tipo de pago (`salaried` o `hourly`), y luego el salario o tarifa y horas.
 
 ---
